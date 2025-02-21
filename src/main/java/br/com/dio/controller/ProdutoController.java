@@ -22,13 +22,13 @@ public class ProdutoController {
     private ProdutoService service;
 
     @PostMapping(value = "/save")
-    public ResponseEntity<Produto> salvaProduto(@RequestBody Produto produto) {
+	public ResponseEntity<Produto> salvaProduto(@RequestBody Produto produto) throws Exception {
 
-        produto = service.save(produto);
+		produto = service.save(produto);
 
-        return ResponseEntity.ok().body(produto);
+		return ResponseEntity.ok().body(produto);
 
-    }
+	}
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<Produto> buscaProduto(@PathVariable Long id) {
